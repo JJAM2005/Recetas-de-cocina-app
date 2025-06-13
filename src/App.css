@@ -1,3 +1,105 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdf6ec;
+  color: #333;
+}
+
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #d35400;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+select,
+input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d35400;
+}
+
+.meal-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.meal-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.meal-card:hover {
+  transform: scale(1.03);
+}
+
+.meal-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.meal-card h3 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.meal-details {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fffefa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.meal-details img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.meal-details ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
 }
