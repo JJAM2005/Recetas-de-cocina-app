@@ -7,7 +7,7 @@ const API_BASE = 'https://www.themealdb.com/api/json/v1/1';
 
 function App() {
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('Dessert');
   const [meals, setMeals] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMeal, setSelectedMeal] = useState(null);

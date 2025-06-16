@@ -1,20 +1,27 @@
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fdf6ec;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('https://www.transparenttextures.com/patterns/kitchen-wall.png'); 
+  background-color: #fffaf0;
   color: #333;
+  background-repeat: repeat;
 }
 
 .app {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 30px;
 }
 
 h1 {
   margin-bottom: 20px;
-  color: #d35400;
+  color: #e74c3c;
+  text-shadow: 1px 1px 2px #fff;
 }
 
 .controls {
@@ -27,41 +34,45 @@ h1 {
 
 select,
 input {
-  padding: 8px;
-  border-radius: 4px;
+  padding: 10px;
+  border-radius: 5px;
   border: 1px solid #ccc;
+  min-width: 200px;
 }
 
 button {
-  padding: 8px 16px;
-  background-color: #e67e22;
+  padding: 10px 20px;
+  background-color: #27ae60;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #d35400;
+  background-color: #1e8449;
 }
 
 .meal-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
 .meal-card {
   background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  border: 1px solid #eee;
+  border-radius: 12px;
   padding: 10px;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .meal-card:hover {
   transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .meal-card img {
@@ -76,65 +87,36 @@ button:hover {
 
 .meal-details {
   text-align: left;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
-  background-color: #fffefa;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  margin-top: 20px;
 }
 
 .meal-details img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 20px;
 }
 
 .meal-details ul {
   padding-left: 20px;
   list-style: disc;
+  columns: 2;
+  column-gap: 30px;
 }
 
 .error {
-  color: red;
+  color: #c0392b;
   font-weight: bold;
+  margin-top: 10px;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 600px) {
+  .meal-details ul {
+    columns: 1;
   }
 }
