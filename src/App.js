@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     fetchCategories();
-    setSelectedCategory('Dessert'); // Categoría por defecto
+    setSelectedCategory('Dessert');
   }, []);
 
   useEffect(() => {
@@ -80,7 +80,10 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Recetas de Cocina</h1>
+      <div className="logo-title">
+        <img src="/logo_app.png" alt="Logo" className="logo" />
+        <h1>Recetas de Cocina</h1>
+      </div>
 
       <div className="controls">
         <select value={selectedCategory} onChange={(e) => {
