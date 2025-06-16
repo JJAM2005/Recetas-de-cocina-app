@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('/fondo.png');
+  background-image: url('../public/fondo.png');
   /*background-image: url('https://www.transparenttextures.com/patterns/kitchen-wall.png');*/
   background-color: #fffaf0;
   color: #333;
