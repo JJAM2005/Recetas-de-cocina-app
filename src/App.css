@@ -1,8 +1,7 @@
-
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('https://www.transparenttextures.com/patterns/kitchen-wall.png'); 
+  background-image: url('https://www.transparenttextures.com/patterns/kitchen-wall.png');
   background-color: #fffaf0;
   color: #333;
   background-repeat: repeat;
@@ -10,17 +9,17 @@ body {
 
 .app {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin-top: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   margin-bottom: 20px;
   color: #e74c3c;
+  text-align: center;
   text-shadow: 1px 1px 2px #fff;
 }
 
@@ -38,6 +37,7 @@ input {
   border-radius: 5px;
   border: 1px solid #ccc;
   min-width: 200px;
+  font-size: 16px;
 }
 
 button {
@@ -48,11 +48,12 @@ button {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #1e8449;
+  transform: scale(1.05);
 }
 
 .meal-list {
@@ -72,7 +73,7 @@ button:hover {
 
 .meal-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .meal-card img {
@@ -83,6 +84,8 @@ button:hover {
 .meal-card h3 {
   margin-top: 10px;
   font-size: 16px;
+  text-align: center;
+  color: #2c3e50;
 }
 
 .meal-details {
@@ -92,7 +95,7 @@ button:hover {
   background-color: #fff;
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
 
@@ -107,16 +110,63 @@ button:hover {
   list-style: disc;
   columns: 2;
   column-gap: 30px;
+  margin-bottom: 20px;
+}
+
+.meal-details h3 {
+  margin-top: 20px;
+  color: #e67e22;
+}
+
+.meal-details p {
+  line-height: 1.6;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.4);
 }
 
 .error {
   color: #c0392b;
   font-weight: bold;
   margin-top: 10px;
+  text-align: center;
+}
+
+
+footer {
+  margin-top: 40px;
+  padding: 15px 10px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  border-radius: 0 0 15px 15px;
 }
 
 @media (max-width: 600px) {
   .meal-details ul {
     columns: 1;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  select,
+  input {
+    min-width: 90%;
+  }
+
+  .meal-details {
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 10px;
   }
 }

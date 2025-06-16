@@ -1,13 +1,11 @@
-//import logo from './logo.svg';
 import './App.css';
 import React, { useEffect, useState } from 'react';
-
 
 const API_BASE = 'https://www.themealdb.com/api/json/v1/1';
 
 function App() {
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('Dessert');
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [meals, setMeals] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMeal, setSelectedMeal] = useState(null);
@@ -16,11 +14,18 @@ function App() {
 
   useEffect(() => {
     fetchCategories();
+    setSelectedCategory('Dessert'); // Categoría por defecto
   }, []);
 
   useEffect(() => {
-    if (selectedCategory) fetchMealsByCategory(selectedCategory);
+    if (selectedCategory && !searchTerm) fetchMealsByCategory(selectedCategory);
   }, [selectedCategory]);
+
+  useEffect(() => {
+    if (searchTerm.trim().length > 0) {
+      searchMeals();
+    }
+  }, [searchTerm]);
 
   const fetchCategories = async () => {
     try {
@@ -47,7 +52,6 @@ function App() {
   };
 
   const searchMeals = async () => {
-    if (!searchTerm) return;
     setLoading(true);
     try {
       const res = await fetch(`${API_BASE}/search.php?s=${searchTerm}`);
@@ -79,7 +83,10 @@ function App() {
       <h1>Recetas de Cocina</h1>
 
       <div className="controls">
-        <select onChange={(e) => setSelectedCategory(e.target.value)}>
+        <select value={selectedCategory} onChange={(e) => {
+          setSearchTerm('');
+          setSelectedCategory(e.target.value);
+        }}>
           <option value="">Seleccionar categoría</option>
           {categories.map((cat) => (
             <option key={cat.idCategory} value={cat.strCategory}>{cat.strCategory}</option>
@@ -92,11 +99,11 @@ function App() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button onClick={searchMeals}>Buscar</button>
       </div>
 
       {loading && <p>Cargando...</p>}
       {error && <p className="error">{error}</p>}
+      {!loading && meals.length === 0 && <p>No se encontraron recetas.</p>}
 
       {!selectedMeal ? (
         <div className="meal-list">
@@ -123,12 +130,15 @@ function App() {
           </ul>
           <h3>Instrucciones:</h3>
           <p>{selectedMeal.strInstructions}</p>
+
           <button onClick={() => setSelectedMeal(null)}>Volver</button>
         </div>
       )}
+      <footer>
+        <p>&copy; 2025 Mi App de Recetas. Jairo Angulo.</p>
+      </footer>
     </div>
   );
 }
 
 export default App;
-
