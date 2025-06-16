@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# 🍽️ Recetas de Cocina App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación web que permite a los usuarios buscar y visualizar recetas de cocina utilizando la API pública [TheMealDB](https://www.themealdb.com/).
 
-## Available Scripts
+![Captura de la App](./public/logo_app.png)
 
-In the project directory, you can run:
+## 🚀 Demo en vivo
 
-### `npm start`
+Accede a la app en línea aquí:  
+👉 [https://recetas-de-cocina-app.vercel.app](https://recetas-de-cocina-app.vercel.app)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧰 Tecnologías utilizadas
 
-### `npm test`
+- React.js
+- JavaScript (ES6)
+- HTML & CSS
+- API REST: [TheMealDB](https://www.themealdb.com/)
+- Vercel (deploy)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📦 Funcionalidades
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔍 Búsqueda de recetas
+- Campo de búsqueda que permite buscar recetas por nombre.
+- Muestra resultados mientras se escribe.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 📂 Listado por categoría
+- Carga automática de categorías desde la API.
+- Por defecto se muestran las recetas de la categoría **"Dessert"**.
+- El usuario puede cambiar de categoría desde un menú desplegable.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📄 Detalles de la receta
+- Al hacer clic en una receta, se muestra una página con:
+  - Imagen de la receta
+  - Nombre, categoría y área
+  - Ingredientes con sus medidas
+  - Instrucciones paso a paso
 
-### `npm run eject`
+### 🎨 Estilo visual
+- Fondo con imagen de cocina (`fondo.png`)
+- Logo personalizado (`logo_app.png`)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Cómo ejecutar localmente
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clona el repositorio:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+git clone https://github.com/JJAM2005/Recetas-de-cocina-app
+cd recetas-de-cocina-app
 
-## Learn More
+2. Instala dependencias:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Inicia el servidor de desarrollo:
 
-### Code Splitting
+npm start
+La app se abrirá en: http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📝 Autor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Desarrollado por Jairo Angulo
+💼 Técnico en programación de software — SENA
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
